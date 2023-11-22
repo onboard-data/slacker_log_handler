@@ -114,6 +114,11 @@ class SlackerLogHandler(Handler):
                 icon_emoji=self.icon_emoji,
                 attachments=attachments,
             )
+        except requests.exceptions.HTTPError as e:
+            if self.fail_silent:
+                pass
+            else:
+                raise e
         except slacker.Error as e:
             if self.fail_silent:
                 pass
