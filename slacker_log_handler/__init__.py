@@ -2,6 +2,7 @@ import json
 import traceback
 from logging import Handler, CRITICAL, ERROR, WARNING, INFO, FATAL, DEBUG, NOTSET, Formatter
 
+import requests.exceptions
 import six
 import slacker
 
